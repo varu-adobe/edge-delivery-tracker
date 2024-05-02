@@ -1,3 +1,9 @@
+function handleLinks() {
+const links = document.querySelectorAll('.demo-buildouts > div.columns-wrapper > div > div > div:nth-child(2) a');
+    links.forEach((link) => {
+        link.href = link.textContent;
+    });
+}
 export default function decorate(block) {
   const cols = [...block.firstElementChild.children];
   block.classList.add(`columns-${cols.length}-cols`);
@@ -15,4 +21,5 @@ export default function decorate(block) {
       }
     });
   });
+  handleLinks();
 }
