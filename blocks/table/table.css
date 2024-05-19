@@ -18,7 +18,7 @@
 
 @media (width >= 900px) {
   .table table {
-    font-size: var(--body-font-size-m);
+    font-size: var(--body-font-size-s);
   }
 }
 
@@ -37,7 +37,7 @@
 
 .table table th,
 .table table td {
-  padding: 8px 16px;
+  /* padding: 8px 16px; */
   text-align: left;
 }
 
@@ -48,7 +48,7 @@
 
 /* striped variant */
 .table.striped tbody tr:nth-child(odd) {
-  background-color: var(--overlay-background-color);
+  /* background-color: var(--overlay-background-color); */
 }
 
 /* bordered variant */
