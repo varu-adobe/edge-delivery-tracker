@@ -25,9 +25,14 @@ export default async function decorate(block) {
     const row = document.createElement('tr');
     if (header && i === 0) thead.append(row);
     else tbody.append(row);
-    [...child.children].forEach((col) => {
+    [...child.children].forEach((col, j) => {
       const cell = buildCell(header ? i : i + 1);
       cell.innerHTML = col.innerHTML;
+      if (j === 3) {
+        if (!cell.innerHTML || cell.innerHTML.trim() === "") {
+          row.classList.add("red");
+        }
+      }
       row.append(cell);
     });
   });

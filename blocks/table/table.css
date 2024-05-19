@@ -11,12 +11,20 @@
 }
 
 @media (width >= 600px) {
+  .table {
+    max-height: 500px; /* Adjust the max height as needed */
+    overflow-y: auto;
+  }
   .table table {
     font-size: var(--body-font-size-s);
   }
 }
 
 @media (width >= 900px) {
+  .table {
+    max-height: 600px; /* Adjust the max height as needed */
+    overflow-y: auto;
+  }
   .table table {
     font-size: var(--body-font-size-s);
   }
@@ -29,6 +37,10 @@
 
 .table table tbody tr {
   border-bottom: 1px solid;
+}
+
+.table table tbody tr.red {
+  background-color:#FFABAB;
 }
 
 .table table th {
