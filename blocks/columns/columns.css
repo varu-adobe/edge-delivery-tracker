@@ -23,66 +23,11 @@
   .columns > div {
     align-items: center;
     flex-direction: unset;
-    gap: 32px;
+    gap: 24px;
   }
 
   .columns > div > div {
     flex: 1;
     order: unset;
   }
-}
-
-.demo-buildouts.columns-container {
-  max-width: 80%;
-  margin: 0 auto;
-}
-
-.demo-buildouts.columns-container > div.columns-wrapper > div > div {
-  margin: 0 auto;
-  border: 1px solid grey;
-  border-top: none;
-}
-
-.demo-buildouts.columns-container > div.columns-wrapper > div > div:nth-child(1) {
-  border-top: 1px solid grey;
-}
-
-.demo-buildouts.columns-container > div.columns-wrapper > div > div > div:nth-child(1) {
-  max-width: 30%;
-}
-
-.demo-buildouts.columns-container > div.columns-wrapper > div > div > div:nth-child(2) {
-  display: flex;
-  max-width: 60%;
-  border-left: 1px solid grey;
-  flex-direction: column;
-  padding: 1% 1% 1%;
-}
-
-.demo-buildouts.columns-container > div.columns-wrapper > div > div > div:nth-child(2) ul {
-  margin: 0;
-}
-
-
-.demo-buildouts.columns-container > div.columns-wrapper > div > div > div:nth-child(2) p {
-  text-align: left;
-  margin: 0 0 2%;
-}
-
-.demo-buildouts.columns-container > div.columns-wrapper > div > div > div:nth-child(2) a {
-  background-color: transparent;
-  margin: 0;
-  color: #4343e1;
-  padding: 0;
-  cursor: pointer;
-  font-weight: normal;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  text-align: left;
-}
-
-.demo-buildouts.columns-container > div.columns-wrapper > div > div img {
-  max-width: 50%;
-  object-fit: cover;
-  margin: 0 auto;
 }
