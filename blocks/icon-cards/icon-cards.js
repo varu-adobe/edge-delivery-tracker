@@ -23,7 +23,7 @@ export default function decorate(block) {
     [...li.children].forEach((div, idx) => {
       if (idx === 0) {
         div.className = 'icon-cards-card-icon';
-        decorateIcons(div);
+        // icon decoration handled globally to avoid duplicates
       } else {
         div.className = 'icon-cards-card-body';
       }
@@ -33,5 +33,45 @@ export default function decorate(block) {
   });
 
   block.textContent = '';
-  block.append(ul);
+
+  /* --- Carousel Enhancements --- */
+  const carouselWrapper = document.createElement('div');
+  carouselWrapper.classList.add('icon-cards-carousel');
+
+  // Navigation buttons
+  const prevButton = document.createElement('button');
+  prevButton.className = 'icon-cards-nav icon-cards-prev';
+  prevButton.setAttribute('aria-label', 'Previous');
+
+  const nextButton = document.createElement('button');
+  nextButton.className = 'icon-cards-nav icon-cards-next';
+  nextButton.setAttribute('aria-label', 'Next');
+
+  carouselWrapper.append(prevButton, ul, nextButton);
+  block.append(carouselWrapper);
+
+  /* Scrolling behavior */
+  function getPageWidth() {
+    // Amount to scroll to show a new full set of cards
+    return ul.clientWidth;
+  }
+
+  prevButton.addEventListener('click', () => {
+    const page = getPageWidth();
+    if (ul.scrollLeft <= 0) {
+      ul.scrollTo({ left: ul.scrollWidth - ul.clientWidth, behavior: 'smooth' });
+    } else {
+      ul.scrollBy({ left: -page, behavior: 'smooth' });
+    }
+  });
+
+  nextButton.addEventListener('click', () => {
+    const page = getPageWidth();
+    const maxScrollLeft = ul.scrollWidth - ul.clientWidth - 1;
+    if (ul.scrollLeft >= maxScrollLeft) {
+      ul.scrollTo({ left: 0, behavior: 'smooth' });
+    } else {
+      ul.scrollBy({ left: page, behavior: 'smooth' });
+    }
+  });
 } 

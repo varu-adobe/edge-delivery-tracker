@@ -40,3 +40,14 @@
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
 }
+
+/* Card heading styling */
+.cards .cards-card-body h1,
+.cards .cards-card-body h2,
+.cards .cards-card-body h3,
+.cards .cards-card-body h4,
+.cards .cards-card-body h5,
+.cards .cards-card-body h6 {
+  font-weight: 700;
+  color: var(--link-color);
+}
