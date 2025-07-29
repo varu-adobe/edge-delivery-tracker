@@ -87,6 +87,12 @@ export default function decorate(block) {
       }
     });
 
+    // Ensure links open in new tab
+    ul.querySelectorAll('a').forEach((a) => {
+      a.setAttribute('target', '_blank');
+      a.setAttribute('rel', 'noopener');
+    });
+
     // Replace block content with the generated list
     block.textContent = '';
     block.append(ul);

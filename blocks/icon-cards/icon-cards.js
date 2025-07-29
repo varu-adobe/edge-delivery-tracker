@@ -48,6 +48,13 @@ export default function decorate(block) {
   nextButton.setAttribute('aria-label', 'Next');
 
   carouselWrapper.append(prevButton, ul, nextButton);
+
+  // Make all links open in new tab
+  ul.querySelectorAll('a').forEach((a) => {
+    a.setAttribute('target', '_blank');
+    a.setAttribute('rel', 'noopener');
+  });
+
   block.append(carouselWrapper);
 
   /* Scrolling behavior */

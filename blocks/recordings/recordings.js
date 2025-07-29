@@ -29,6 +29,12 @@ export default function decorate(block) {
     pic.replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]));
   });
 
+  // Make all links open in new tab
+  ul.querySelectorAll('a').forEach((a) => {
+    a.setAttribute('target', '_blank');
+    a.setAttribute('rel', 'noopener');
+  });
+
   block.textContent = '';
   block.append(ul);
 } 
