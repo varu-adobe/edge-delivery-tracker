@@ -81,15 +81,7 @@ async function prepareRequest(form) {
     'x-adobe-form-hostname': window?.location?.hostname
   };
   const body = { data: payload };
-  let url;
-  let baseUrl = getSubmitBaseUrl();
-  if (!baseUrl) {
-    // eslint-disable-next-line prefer-template
-    baseUrl = 'https://forms.adobe.com/adobe/forms/af/submit/';
-    url = baseUrl + btoa(`${form.dataset.action}.json`);
-  } else {
-    url = form.dataset.action;
-  }
+  const url = form.dataset.submit || form.dataset.action;
   return { headers, body, url };
 }
 
