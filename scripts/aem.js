@@ -392,13 +392,16 @@ function wrapTextNodes(block) {
  * @param {Element} element container element
  */
 function decorateButtons(element) {
+  const allowedTitleSubstrings = ['Watch Now'];
   element.querySelectorAll('a').forEach((a) => {
     a.title = a.title || a.textContent;
     if (a.href !== a.textContent) {
       const up = a.parentElement;
       const twoup = a.parentElement.parentElement;
       if (!a.querySelector('img')) {
-        if (up.childNodes.length === 1 && (up.tagName === 'P' || up.tagName === 'DIV')) {
+        const isAllowedByTitle = allowedTitleSubstrings.some((s) => a.title && a.title.toLowerCase().includes(s.toLowerCase()));
+        const isAllowedByStructure = up.childNodes.length === 1 && (up.tagName === 'P' || up.tagName === 'DIV');
+        if (isAllowedByTitle || isAllowedByStructure) {
           a.className = 'button'; // default
           up.classList.add('button-container');
         }
