@@ -392,7 +392,7 @@ function wrapTextNodes(block) {
  * @param {Element} element container element
  */
 function decorateButtons(element) {
-  const allowedTitleSubstrings = ['Watch Now'];
+  const allowedTitleSubstrings = ['Watch Now','AI Radar','FluffyJaws','Dev Home','Dev Home','EasyMCP','Adobe AI Foundation'];
   element.querySelectorAll('a').forEach((a) => {
     a.title = a.title || a.textContent;
     if (a.href !== a.textContent) {
