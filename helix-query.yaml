@@ -1,0 +1,10 @@
+version: 1
+indices:
+  site:
+    include:
+      - '/**'
+    exclude:
+      - '/_drafts/**'
+      - '/test/**'
+
+    target: /query-index.json
